@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Hide scrollbar globally */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Force correct mobile viewport behavior */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  background: #000;
+}
+
+/* Safe tap targets */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Swiper base styles */
+.swiper {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.swiper-wrapper {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.swiper-slide {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Prevent paint flicker */
+.swiper-slide-active,
+.swiper-slide-next,
+.swiper-slide-prev {
+  will-change: transform;
+}
+
+/* LINEAR MODE - Constant speed, mechanical feel */
+.vertical-snap-linear .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
